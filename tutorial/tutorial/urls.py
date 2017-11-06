@@ -19,4 +19,10 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^snippets/', include('snippets.urls', namespace='snippets')),
+    url(r'^users/', include('snippets.urls.users', namespace='users')),
+]
+
+urlpatterns += [
+    url(r'^api-auth/', include('rest_framework.urls',
+                               namespace='rest_framework')),
 ]
