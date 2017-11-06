@@ -2,19 +2,8 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from .serializers import SnippetSerializer
-from .models import Snippet
-
-"""
-snippets/urls.py에 urlpatterns작성
-config/urls.py에 snippets.urls를 include
-아래의 snippet_list 뷰가
-    /snippets/ 에 연결되도록 url을 구성
-
-아래의 snippet_detail뷰가
-    /snippets/<pk>/ 에 연결되도록 url 구성
-    ex) /snippets/3/
-"""
+from ..serializers import SnippetSerializer
+from ..models import Snippet
 
 
 # 이 뷰는 api_view형태로 동작함 (request에 HttpRequest가 아닌 Request가 주어짐)
